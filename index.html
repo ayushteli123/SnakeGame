@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Nokia Phone Styles */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to bottom, #333, #000);
+      margin: 0;
+      padding: 0;
+    }
+    .phone {
+      width: 280px;
+      height: 600px;
+      background: radial-gradient(circle, #222, #000);
+      border-radius: 40px;
+      position: relative;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 5px solid #444;
+    }
+    .screen {
+      width: 220px;
+      height: 260px;
+      background: #111;
+      margin-top: 20px;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.6);
+    }
+    .num-pad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 50px;
+    }
+    .num-pad .button {
+      width: 65px;
+      height: 65px;
+      background: linear-gradient(to top, #444, #666);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: transform 0.1s ease;
+      border: 1px solid #777;
+    }
+    .num-pad .button:active {
+      transform: scale(0.9);
+    }
+    
+    /* Game Container Styles */
+    #gameContainer {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    #scoreBox, #hiscoreBox {
+      position: absolute;
+      top: 5px;
+      font-size: 12px;
+      color: #0f0;
+      z-index: 2;
+    }
+    #hiscoreBox {
+      right: 5px;
+      left: auto;
+    }
+    #scoreBox {
+      left: 5px;
+    }
+    #board {
+      width: 100%;
+      height: 100%;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <div class="screen">
+      <!-- Game is embedded inside the phone's screen -->
+      <div id="gameContainer">
+        <div id="scoreBox">Score: 0</div>
+        <div id="hiscoreBox">HiScore: 0</div>
+        <div id="board"></div>
+      </div>
+    </div>
+    <div class="num-pad">
+      <div class="button">1</div>
+      <div class="button">2</div>
+      <div class="button">3</div>
+      <div class="button">4</div>
+      <div class="button">5</div>
+      <div class="button">6</div>
+      <div class="button">7</div>
+      <div class="button">8</div>
+      <div class="button">9</div>
+      <div class="button">*</div>
+      <div class="button">0</div>
+      <div class="button">#</div>
+    </div>
+  </div>
+  <script src="js/index.js"></script>
+</body>
+</html>
